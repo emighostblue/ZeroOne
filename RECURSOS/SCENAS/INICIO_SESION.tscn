@@ -1,0 +1,104 @@
+[gd_scene load_steps=12 format=3 uid="uid://byopnvemvrcfe"]
+
+[ext_resource type="Script" path="res://RECURSOS/Scripts/Inicio/Fondo_sesion.gd" id="1_6dmrh"]
+[ext_resource type="Script" path="res://RECURSOS/SCENAS/inicio_sesion.gd" id="1_ai6tq"]
+[ext_resource type="Texture2D" uid="uid://dq42ij6a8fb6o" path="res://RECURSOS/FONDOS/FOND_IN_1024X646.jpg" id="2_pukl2"]
+[ext_resource type="Texture2D" uid="uid://dm0bmrt7338ry" path="res://RECURSOS/ICONOS/US_150X150.png" id="3_f32u8"]
+[ext_resource type="Texture2D" uid="uid://c8sxc68c6t0sm" path="res://RECURSOS/CAJAS DE TEXTO/CAJDT_ 300X68.png" id="4_b3x2j"]
+[ext_resource type="Texture2D" uid="uid://brnfg6sg1yxah" path="res://RECURSOS/BOTONES/BTN_IN_S_233X92.png" id="6_0trlk"]
+[ext_resource type="Texture2D" uid="uid://4o7xekfiswbx" path="res://RECURSOS/BOTONES/BOTN_REG_190X65.png" id="7_i0fg0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rhdux"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_n7poj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bt2th"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_k33tx"]
+
+[node name="INTERFAZ" type="Node2D"]
+script = ExtResource("1_ai6tq")
+
+[node name="FONDO" type="Node2D" parent="."]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="FONDO"]
+script = ExtResource("1_6dmrh")
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="FONDO/ParallaxBackground"]
+motion_mirroring = Vector2(1024, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="FONDO/ParallaxBackground/ParallaxLayer"]
+position = Vector2(514, 326)
+texture = ExtResource("2_pukl2")
+
+[node name="ELEMENTOS" type="Node2D" parent="."]
+
+[node name="Us150x150" type="Sprite2D" parent="ELEMENTOS"]
+position = Vector2(512, 136)
+texture = ExtResource("3_f32u8")
+
+[node name="Label" type="Label" parent="ELEMENTOS"]
+offset_left = 360.0
+offset_top = 224.0
+offset_right = 664.0
+offset_bottom = 272.0
+theme_override_font_sizes/font_size = 32
+text = "INICIAR SESIÓN"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Cajdt300x68" type="Sprite2D" parent="ELEMENTOS"]
+position = Vector2(512, 320)
+scale = Vector2(1.12, 1.64706)
+texture = ExtResource("4_b3x2j")
+
+[node name="TextEdit" type="LineEdit" parent="ELEMENTOS"]
+offset_left = 368.0
+offset_top = 304.0
+offset_right = 648.0
+offset_bottom = 336.0
+theme_override_colors/font_placeholder_color = Color(0.446777, 0.446777, 0.446777, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+theme_override_styles/focus = SubResource("StyleBoxEmpty_rhdux")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_n7poj")
+placeholder_text = "Correo Electrónico"
+
+[node name="Cajdt300x69" type="Sprite2D" parent="ELEMENTOS"]
+position = Vector2(512, 415)
+scale = Vector2(1.12, 1.67647)
+texture = ExtResource("4_b3x2j")
+
+[node name="TextEdit2" type="LineEdit" parent="ELEMENTOS"]
+offset_left = 368.0
+offset_top = 400.0
+offset_right = 648.0
+offset_bottom = 432.0
+theme_override_colors/font_placeholder_color = Color(0.447059, 0.447059, 0.447059, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+theme_override_styles/focus = SubResource("StyleBoxEmpty_bt2th")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_k33tx")
+placeholder_text = "Contraseña"
+
+[node name="BOTONES" type="Node2D" parent="."]
+
+[node name="Button" type="Button" parent="BOTONES"]
+offset_left = 392.0
+offset_top = 448.0
+offset_right = 633.0
+offset_bottom = 548.0
+icon = ExtResource("6_0trlk")
+flat = true
+
+[node name="Button2" type="Button" parent="BOTONES"]
+offset_left = 411.0
+offset_top = 536.0
+offset_right = 609.0
+offset_bottom = 609.0
+icon = ExtResource("7_i0fg0")
+flat = true
+
+[connection signal="pressed" from="BOTONES/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="BOTONES/Button2" to="." method="_on_button_2_pressed"]

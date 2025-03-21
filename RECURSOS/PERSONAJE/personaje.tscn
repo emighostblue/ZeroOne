@@ -1,0 +1,163 @@
+[gd_scene load_steps=28 format=3 uid="uid://jnissetk2msv"]
+
+[ext_resource type="Texture2D" uid="uid://d1oeelvr52lqs" path="res://RECURSOS/PERSONAJE/CAMINAR/ABAJO/CAM_AB_1_96x96.png" id="1_2mrii"]
+[ext_resource type="Script" path="res://RECURSOS/Scripts/Personaje/personaje.gd" id="1_m43sc"]
+[ext_resource type="Texture2D" uid="uid://dc5toqh3tociu" path="res://RECURSOS/PERSONAJE/CAMINAR/ABAJO/CAM_AB_2_96x96.png" id="2_v5rn2"]
+[ext_resource type="Texture2D" uid="uid://ceb3hgsxle8lr" path="res://RECURSOS/PERSONAJE/CAMINAR/ABAJO/CAM_AB_3_96x96.png" id="3_2jhro"]
+[ext_resource type="Texture2D" uid="uid://n0vxsl08qtel" path="res://RECURSOS/PERSONAJE/CAMINAR/ABAJO/CAM_AB_4_96x96.png" id="4_qi310"]
+[ext_resource type="Texture2D" uid="uid://cvl5uj20iasmf" path="res://RECURSOS/PERSONAJE/CAMINAR/ARRIBA/CAM_AR_1_96x96.png" id="5_yi1px"]
+[ext_resource type="Texture2D" uid="uid://b04fdagujal3y" path="res://RECURSOS/PERSONAJE/CAMINAR/ARRIBA/CAM_AR_2_96x96.png" id="6_vi0h5"]
+[ext_resource type="Texture2D" uid="uid://cs6q5e7msx28p" path="res://RECURSOS/PERSONAJE/CAMINAR/ARRIBA/CAM_AR_3_96x96.png" id="7_248ed"]
+[ext_resource type="Texture2D" uid="uid://dbwxhlxd8xapi" path="res://RECURSOS/PERSONAJE/CAMINAR/ARRIBA/CAM_AR_4_96x96.png" id="8_3pdl8"]
+[ext_resource type="Texture2D" uid="uid://cjjnut1gj6v58" path="res://RECURSOS/PERSONAJE/CAMINAR/DERECHA/CAM_DE_1_96x96.png" id="9_2we8f"]
+[ext_resource type="Texture2D" uid="uid://6ldkugysxji1" path="res://RECURSOS/PERSONAJE/CAMINAR/DERECHA/CAM_DE_2_96x96.png" id="10_q4xod"]
+[ext_resource type="Texture2D" uid="uid://32nc71k1fkdk" path="res://RECURSOS/PERSONAJE/CAMINAR/DERECHA/CAM_DE_3_96x96.png" id="11_k1bct"]
+[ext_resource type="Texture2D" uid="uid://bpvnelemburqs" path="res://RECURSOS/PERSONAJE/CAMINAR/DERECHA/CAM_DE_4_96x96.png" id="12_6bx77"]
+[ext_resource type="Texture2D" uid="uid://lsh2k3pj5a07" path="res://RECURSOS/PERSONAJE/CAMINAR/IZQUIERDA/CAM_IZ_1_96x96.png" id="13_uwyel"]
+[ext_resource type="Texture2D" uid="uid://by8ua7lp2hcj6" path="res://RECURSOS/PERSONAJE/CAMINAR/IZQUIERDA/CAM_IZ_2_96x96.png" id="14_eyunk"]
+[ext_resource type="Texture2D" uid="uid://do24x2r842xcx" path="res://RECURSOS/PERSONAJE/CAMINAR/IZQUIERDA/CAM_IZ_3_96x96.png" id="15_syctp"]
+[ext_resource type="Texture2D" uid="uid://bcdotg2oo1u2l" path="res://RECURSOS/PERSONAJE/CAMINAR/IZQUIERDA/CAM_IZ_4_96x96.png" id="16_32f1p"]
+[ext_resource type="Texture2D" uid="uid://cqs8fhkyv6axw" path="res://RECURSOS/PERSONAJE/ESTATICO/STATIC_AB_1_96x96.png" id="17_gvlrw"]
+[ext_resource type="Texture2D" uid="uid://n5c55x7wasxr" path="res://RECURSOS/PERSONAJE/ESTATICO/STATIC_AB_2_96x96.png" id="18_5vfbh"]
+[ext_resource type="Texture2D" uid="uid://dop18d3xojqih" path="res://RECURSOS/PERSONAJE/ESTATICO/STATIC_AR_1_96x96.png" id="19_wrd71"]
+[ext_resource type="Texture2D" uid="uid://cut2dpclde43q" path="res://RECURSOS/PERSONAJE/ESTATICO/STATIC_AR_2_96x96.png" id="20_gt45k"]
+[ext_resource type="Texture2D" uid="uid://c4ax6dyavkx1r" path="res://RECURSOS/PERSONAJE/ESTATICO/STATIC_DE_1_96x96.png" id="22_dwkj3"]
+[ext_resource type="Texture2D" uid="uid://dsu78vo3yorbv" path="res://RECURSOS/PERSONAJE/ESTATICO/STATIC_DE_2_96x96.png" id="23_nsjcy"]
+[ext_resource type="Texture2D" uid="uid://bm60rlw7hcbi6" path="res://RECURSOS/PERSONAJE/ESTATICO/STATIC_IZ_1_96x96.png" id="24_ov62s"]
+[ext_resource type="Texture2D" uid="uid://d0klsgu1msuqy" path="res://RECURSOS/PERSONAJE/ESTATICO/STATIC_IZ_2_96x96.png" id="25_pn6sr"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ki20e"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_2mrii")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_v5rn2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_2jhro")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_qi310")
+}],
+"loop": true,
+"name": &"Caminar abajo",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_yi1px")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_vi0h5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_248ed")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_3pdl8")
+}],
+"loop": true,
+"name": &"Caminar arriba",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_2we8f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_q4xod")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_k1bct")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_6bx77")
+}],
+"loop": true,
+"name": &"Caminar derecha",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_uwyel")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_eyunk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_syctp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_32f1p")
+}],
+"loop": true,
+"name": &"Caminar izquierda",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("17_gvlrw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_5vfbh")
+}],
+"loop": true,
+"name": &"Estatico abajo",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("19_wrd71")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_gt45k")
+}],
+"loop": true,
+"name": &"Estatico arriba",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("22_dwkj3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_nsjcy")
+}],
+"loop": true,
+"name": &"Estatico derecha",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("24_ov62s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_pn6sr")
+}],
+"loop": true,
+"name": &"Estatico izquierda",
+"speed": 3.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2p4wk"]
+size = Vector2(32, 24)
+
+[node name="Personaje" type="CharacterBody2D" groups=["Personaje"]]
+script = ExtResource("1_m43sc")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_ki20e")
+animation = &"Estatico abajo"
+autoplay = "Estatico abajo"
+frame_progress = 0.737023
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 24)
+shape = SubResource("RectangleShape2D_2p4wk")

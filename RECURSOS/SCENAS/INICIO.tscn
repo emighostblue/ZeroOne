@@ -1,0 +1,88 @@
+[gd_scene load_steps=10 format=3 uid="uid://hfgtunh2x2to"]
+
+[ext_resource type="Script" path="res://RECURSOS/Scripts/Inicio/Fondo_inico.gd" id="1_8ijkd"]
+[ext_resource type="Texture2D" uid="uid://dq42ij6a8fb6o" path="res://RECURSOS/FONDOS/FOND_IN_1024X646.jpg" id="2_wsddw"]
+[ext_resource type="Texture2D" uid="uid://qnc1icinmsys" path="res://RECURSOS/BOTONES/BOTON_JUGAR_190X71.png" id="4_abdpa"]
+[ext_resource type="Script" path="res://RECURSOS/Scripts/Botones/jugar.gd" id="4_xr8wq"]
+[ext_resource type="Texture2D" uid="uid://bxga68rh3q270" path="res://RECURSOS/BOTONES/SALIR_IN_80X80.png" id="6_lj62m"]
+[ext_resource type="Texture2D" uid="uid://b4re8nfcmucvo" path="res://RECURSOS/BOTONES/USUARIO_IN_80X80 (1).png" id="6_o7xe4"]
+[ext_resource type="Texture2D" uid="uid://c5w70sku4348y" path="res://RECURSOS/FONDOS/LOGIN_IN_800X198.png" id="7_fooi1"]
+[ext_resource type="Script" path="res://RECURSOS/Scripts/Botones/iniciar_sesion.gd" id="7_pdwxp"]
+
+[sub_resource type="GDScript" id="GDScript_mmv16"]
+script/source = "extends Node2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+#func _process(delta: float) -> void:
+	#pass
+
+func _on_jugar_pressed() -> void:
+	get_tree().change_scene_to_file(\"res://RECURSOS/NIVEL_1.tscn\")
+	pass # Replace with function body.
+	
+func _on_salir_pressed() -> void:
+	get_tree().quit()
+	pass # Replace with function body.
+
+
+func _on_iniciar_sesion_pressed() -> void:
+	get_tree().change_scene_to_file(\"res://RECURSOS/SCENAS/INICIO_SESION.tscn\")
+	pass # Replace with function body.
+"
+
+[node name="MUNDO" type="Node2D"]
+script = SubResource("GDScript_mmv16")
+
+[node name="FONDO" type="Node2D" parent="."]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="FONDO"]
+script = ExtResource("1_8ijkd")
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="FONDO/ParallaxBackground"]
+motion_mirroring = Vector2(1024, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="FONDO/ParallaxBackground/ParallaxLayer"]
+position = Vector2(526, 325.5)
+scale = Vector2(1.0293, 1.00774)
+texture = ExtResource("2_wsddw")
+
+[node name="JUGAR2" type="Button" parent="."]
+offset_left = 416.0
+offset_top = 504.0
+offset_right = 614.0
+offset_bottom = 583.0
+icon = ExtResource("4_abdpa")
+flat = true
+script = ExtResource("4_xr8wq")
+
+[node name="SALIR" type="Button" parent="."]
+offset_left = -25.0
+offset_top = 20.0
+offset_right = 153.0
+offset_bottom = 108.0
+icon = ExtResource("6_lj62m")
+flat = true
+icon_alignment = 1
+
+[node name="Iniciar_sesion" type="Button" parent="."]
+offset_left = 912.0
+offset_top = 24.0
+offset_right = 1000.0
+offset_bottom = 112.0
+icon = ExtResource("6_o7xe4")
+flat = true
+script = ExtResource("7_pdwxp")
+
+[node name="LoginIn800x198" type="Sprite2D" parent="."]
+position = Vector2(512, 344)
+texture = ExtResource("7_fooi1")
+
+[connection signal="pressed" from="JUGAR2" to="JUGAR2" method="_on_pressed"]
+[connection signal="pressed" from="SALIR" to="." method="_on_salir_pressed"]
+[connection signal="pressed" from="Iniciar_sesion" to="." method="_on_iniciar_sesion_pressed"]
